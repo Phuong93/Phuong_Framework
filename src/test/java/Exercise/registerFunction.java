@@ -8,8 +8,8 @@ import org.openqa.selenium.WebElement;
 
 public class registerFunction {
 	private WebDriver driver;
-	public registerFunction(WebDriver d2) {
-		driver = d2;
+	public registerFunction(WebDriver d) {
+		driver = d;
 		}
 	public void register() {
 		WebElement firstName = driver.findElement(By.name("firstName"));
