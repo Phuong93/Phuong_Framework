@@ -10,7 +10,10 @@ public class launchBrowserFunction {
 	private WebDriver driver = null;
 	private String rootPath = System.getProperty("user.dir");
 	private final String referencesPath = "/src/test/resources/webdriver/";
-
+	String url;
+	public launchBrowserFunction(String u) {
+		url = u;
+	}
 	public WebDriver launchBrowser(String browserName) {
 		switch (browserName.toLowerCase()) {
 		case "chrome":
@@ -27,7 +30,7 @@ public class launchBrowserFunction {
 		}
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		// driver.manage().window().maximize();
-		driver.get("https://the-internet.herokuapp.com/broken_images");
+		driver.get(url);
 		return driver;
 	}
 	public void quitBrowser() {

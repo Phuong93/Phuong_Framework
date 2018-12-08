@@ -27,7 +27,7 @@ public class verifyBrokenImageFunction {
 
 	public void verifyBrokenImage() {
 		String filePath = System.getProperty("user.dir");
-		String filename = filePath + "/src/test/dataOut/Result.xlsx";
+		String filename = filePath + "/src/test/dataOut/verifyImageResult.xlsx";
 		List<WebElement> imageList = driver.findElements(By.tagName("img"));
 		int index = 0;
 		for (WebElement imageElement : imageList) {
