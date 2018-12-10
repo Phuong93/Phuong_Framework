@@ -6,16 +6,16 @@ public class registerFunction {
 	excelService excelS;
 	elementService getE;
 
-	public registerFunction(excelService e, elementService g) {
-		excelS = e;
-		getE = g;
+	public registerFunction(excelService excel, elementService element) {
+		excelS = excel;
+		getE = element;
 	}
 
 	public void register() {
 		int index = 1;
 		while(excelS.readExcelValue(0, index, 0) != "") {
 			if (excelS.readExcelValue(0, index, 0).contains("input")) {
-				getE.sendKey(excelS.readExcelValue(0, index, 0), excelS.readExcelValue(0, index, 1), excelS.readExcelValue(0, index, 2));
+				getE.sendKeyEvent(excelS.readExcelValue(0, index, 0), excelS.readExcelValue(0, index, 1), excelS.readExcelValue(0, index, 2));
 			} else if (excelS.readExcelValue(0, index, 0).contains("click")) {
 				getE.clickEvent(excelS.readExcelValue(0, index, 0), excelS.readExcelValue(0, index, 1));
 			} else if (excelS.readExcelValue(0, index, 0).contains("selectOption")) {				

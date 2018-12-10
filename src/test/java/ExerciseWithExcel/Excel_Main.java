@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 public class Excel_Main {
 
 	public static void main(String[] args) throws Exception {
+		
 		/**
 		 * This function is verify Broken Images
 		 * AUTHOR: PHUONG TRAN
@@ -17,6 +18,7 @@ public class Excel_Main {
 //		verifyBrokenImageFunction image = new verifyBrokenImageFunction(driverBrokenImage);
 //		image.verifyBrokenImage();
 //		supportBrokenImage.quitBrowser();
+		
 		/**
 		 * This function is register
 		 * AUTHOR: PHUONG TRAN
@@ -24,17 +26,29 @@ public class Excel_Main {
 		 * register from excel file
 		 * UPDATED DATE: 8.12.2018
 		 */
-		launchBrowserFunction supportRegister = new launchBrowserFunction("http://newtours.demoaut.com/mercuryregister.php");
-		WebDriver driverRegister = supportRegister.launchBrowser("chrome");
-//		registerFunction register = new registerFunction(driverRegister);
+//		launchBrowserFunction supportRegister = new launchBrowserFunction("http://newtours.demoaut.com/mercuryregister.php");
+//		WebDriver driverRegister = supportRegister.launchBrowser("chrome");
+//		excelService excelS = new excelService(System.getProperty("user.dir") + "/src/test/dataIn/Elements.xlsx");
+//		elementService getE = new elementService(driverRegister);
+//		registerFunction register = new registerFunction(excelS, getE);
 //		register.register();
 //		supportRegister.quitBrowser();
-		excelService excelS = new excelService(System.getProperty("user.dir") + "/src/test/dataIn/Elements.xlsx");
-		elementService getE = new elementService(driverRegister);
 		
-		registerFunction register = new registerFunction(excelS, getE);
-		register.register();
-		supportRegister.quitBrowser();
+		/**
+		 * This function is checkout products
+		 * AUTHOR: PHUONG TRAN
+		 * SU3
+		 * implement checkout function
+		 * UPDATED DATE: 10.12.2018
+		 */
+		launchBrowserFunction supportCheckout = new launchBrowserFunction("http://automationpractice.com/index.php");
+		WebDriver driverCheckout = supportCheckout.launchBrowser("chrome");
+		excelService excelCheckout = new excelService(System.getProperty("user.dir") + "/src/test/dataIn/Elements.xlsx");
+		elementService elementsCheckout = new elementService(driverCheckout);
+		checkoutFunction checkout = new checkoutFunction(excelCheckout,elementsCheckout);
+		checkout.checkout();
+//		supportCheckout.quitBrowser();
+		
 	}
 
 }
