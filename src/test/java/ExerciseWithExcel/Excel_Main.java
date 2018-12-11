@@ -47,7 +47,8 @@ public class Excel_Main {
 		elementService elementsCheckout = new elementService(driverCheckout);
 		checkoutFunction checkout = new checkoutFunction(excelCheckout,elementsCheckout);
 		checkout.checkout();
-//		supportCheckout.quitBrowser();
+		Thread.sleep(2000);
+		supportCheckout.quitBrowser();
 		
 	}
 
